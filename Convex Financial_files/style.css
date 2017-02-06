@@ -49,7 +49,7 @@ table {
 /*GENERAL*/
 
 body {
-	background-image:url(assets/img/back.jpg);
+	background-image:url(../images/back.jpg);
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
