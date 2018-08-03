@@ -13,6 +13,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Page
 
+(def font-stack "-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif")
+
 (defn logo [size]
   (let [{:keys [inner outer]} (shapes)
         outer-path [:path {:d outer}]
@@ -41,21 +43,22 @@
                inner-path])])]))
 
 (defn page [ratom]
-  (let [size (reagent/atom 128)
+  (let [size        (reagent/atom 128)
         size-spring (anim/spring size)]
     (fn [ratom]
       [:div {:style {:background-color "#0a1f2d"
-                     :min-height "100vh"
-                     :display "flex"
-                     :flex-direction "column"
-                     :align-items "center"
-                     :justify-content "space-between"}}
+                     :min-height       "100vh"
+                     :display          "flex"
+                     :flex-direction   "column"
+                     :align-items      "center"
+                     :justify-content  "space-between"}}
        [:div "hi"]
-       [:div {:style {}
+       [:div {:style    {}
               :on-click #(swap! size + 10)}
         [logo @size-spring]]
-       [:div {:style {:color :gray}} [:small "Convex Financial"]
-        ]])))
+       [:div {:style {:color       :gray
+                      :font-family font-stack}}
+        [:small "Convex Financial"]]])))
 
 
 
