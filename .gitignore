@@ -1,1 +1,6 @@
-_site
+/*.log
+/target
+/*-init.clj
+/resources/public/js
+out
+/.nrepl-port
