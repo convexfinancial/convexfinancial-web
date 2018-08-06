@@ -1,0 +1,53 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif
+}
+
+.wrapper {
+    background: url(/images/samuel-zeller-34751-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    //min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 1em;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.panel-1 {
+    //background-color: rgb(10,31,45, 0.9);
+    background: linear-gradient(to right,
+                                rgb(10,31,45, 0.9),
+                                rgb(10,31,45, 0.9),
+                                rgb(10,31,45, 0.7),
+                                rgb(0,0,0,0));
+    max-width: 400px;
+    flex: 0 0 auto;
+    padding: 2em;
+    color: #9ee8e3;
+
+}
+
+.panel-2 {
+    background-color: rgb(10,31,45, 0.9);
+    min-width: 400px;
+    flex: 0 0 auto;
+    padding: 1em;
+    color: #9ee8e3;
+    align-self: flex-end;
+
+}
+
+.blurb {
+    //font-family: Georgia,Times,Times New Roman,serif;
+    width: 70%;
+    line-height: 1.5;
+    text-indent: -1em;
+}

@@ -13,8 +13,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Page
 
-(def font-stack "-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif")
-
 (defn logo [size]
   (let [{:keys [inner outer]} (shapes)
         outer-path [:path {:d outer}]
@@ -43,21 +41,16 @@
                inner-path])])]))
 
 (defn page [ratom]
-  (let [size        (reagent/atom 128)
+  (let [size        (reagent/atom 64)
         size-spring (anim/spring size)]
     (fn [ratom]
-      [:div {:style {:background-color "#0a1f2d"
-                     :min-height       "100vh"
-                     :display          "flex"
-                     :flex-direction   "column"
-                     :align-items      "center"
-                     :justify-content  "space-between"}}
-       [:div "hi"]
-       [:div {:style    {}
-              :on-click #(swap! size + 10)}
-        [logo @size-spring]]
-       [:div {:style {:color       :gray
-                      :font-family font-stack}}
+      [:div.wrapper
+       [:div.panel-1 {:on-click #(swap! size + 10)}
+        [logo @size-spring]
+        [:div.blurb
+         [:p [:strong "Convex Financial"]
+          " provides specialised solutions for financial services companies. We help our partners manage the economics of products and distribution channels, and help implement innovative retail advice and distribution models."]]]
+       [:div.panel-2
         [:small "Convex Financial"]]])))
 
 
